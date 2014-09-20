@@ -1,15 +1,18 @@
 package doublingTest;
 
-public class TwoSum {
+import java.util.Arrays;
+
+import javax.naming.BinaryRefAddr;
+
+public class TwoSumFast {
 	
 	/**
 	 * Counts the number of pairs in the given integer array which sum to zero.
 	 * i.e. a[i] + a[j] = 0.
 	 * 
-	 * The order of growth is N^2.
 	 * A mathematic model of the running time is:
 	 * 
-	 * 	T(N) ~ aN^2
+	 * 	T(N) ~ aNlogN
 	 * 
 	 * where a is some machine dependent constant.
 	 * 
@@ -18,20 +21,16 @@ public class TwoSum {
 	 */
 	public static int count(int[] a) {
 		/* A: statements executed in constant (growth 1) time */
+		Arrays.sort(a);
 		int N = a.length;
 		int cnt = 0;
 		for (int i = 0; 
 		/* A */
 			/* B: statements executed in linear time */
 			i < N; i++) {
-			for (int j = i+1; 
 			/*/B */
-				/* C: statement executed in quadratic time */
-				j < N; j++) {
-				/* C */
-					if(a[i] + a[j] == 0)
-						cnt++; /* E: depends on input */
-				}
+				if(BinarySearch.rank(-a[i], a) > i)
+					cnt++; /* E: depends on input */
 			}
 		return cnt;
 	}

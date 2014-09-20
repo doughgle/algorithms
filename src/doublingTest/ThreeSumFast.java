@@ -19,22 +19,12 @@ public class ThreeSumFast {
 	 */
 	public static int count(int[] a) {
 		Arrays.sort(a);
-		/* A: statements executed in constant (growth 1) time */
 		int N = a.length;
 		int cnt = 0;
-		for (int i = 0; 
-		/* A */
-			/* B: statements executed in linear time */
-			i < N; i++) {
-			for (int j = i+1; 
-			/*/B */
-				/* C: statement executed in quadratic time */
-				j < N; j++) {
-				/* C */
-					/* D: statements executed in cubic time */
+		for (int i = 0;	i < N; i++) {
+			for (int j = i+1; j < N; j++) {
 					if(BinarySearch.rank(-a[i]-a[j], a) > j)
-						cnt++; /* E: depends on input */
-					/* D */
+						cnt++;
 				}
 			}
 		return cnt;

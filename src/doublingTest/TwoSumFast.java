@@ -29,16 +29,16 @@ public class TwoSumFast {
 	 * @return
 	 */
 	public static int count(int[] a) {
-		/* A: statements executed in constant (growth 1) time */
-		Arrays.sort(a);
+		Arrays.sort(a); // (Merge sort) executes in linearithmic time (NlogN)
+		/* statements executed in constant (growth 1) time */
 		int N = a.length;
 		int cnt = 0;
 		for (int i = 0; 
-		/* A */
-			/* B: statements executed in linear time */
+		/*/constant */
+			/* statements executed in linear time */
 			i < N; i++) {
-			/*/B */
-				if(BinarySearch.rank(-a[i], a) > i)
+			/*/linear */
+				if(BinarySearch.rank(-a[i], a) > i) // executes in logarithmic time
 					cnt++; /* E: depends on input */
 			}
 		return cnt;

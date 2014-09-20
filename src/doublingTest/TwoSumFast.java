@@ -2,8 +2,6 @@ package doublingTest;
 
 import java.util.Arrays;
 
-import javax.naming.BinaryRefAddr;
-
 public class TwoSumFast {
 	
 	/**
@@ -16,6 +14,15 @@ public class TwoSumFast {
 	 * 
 	 * where a is some machine dependent constant.
 	 * 
+	 * Implemented a faster algorithm for finding pairs of integers that sum to zero 
+	 * (twoSum). The algorithm first sorts the input array in place. Then, for each 
+	 * integer in the array, it proceeds to find the array index of an integer which 
+	 * might cancel out the subject integer (i.e. sum to zero).
+	 * 
+	 * If an integer is found which cancels the subject integer, AND it appears 
+	 * after the subject in the sorted array, count is incremented.
+	 * If, however, the cancelling integer appears before the subject integer, 
+	 * it's not counted, to avoid double counting.
 	 * @param a
 	 * @return
 	 */

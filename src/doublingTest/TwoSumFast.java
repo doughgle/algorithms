@@ -15,7 +15,9 @@ public class TwoSumFast {
 	 * where a is some machine dependent constant.
 	 * 
 	 * Implemented a faster algorithm for finding pairs of integers that sum to zero 
-	 * (twoSum). The algorithm first sorts the input array in place. Then, for each 
+	 * (twoSum). It assumes that all integers in the array are unique. 
+	 * 
+	 * The algorithm first sorts the input array in place. Then, for each 
 	 * integer in the array, it proceeds to find the array index of an integer which 
 	 * might cancel out the subject integer (i.e. sum to zero).
 	 * 

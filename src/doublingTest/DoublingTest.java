@@ -12,7 +12,7 @@ public class DoublingTest {
 			a[i] = randomGen.nextInt(2 * MAX) - MAX;
 		}
 		Stopwatch timer = new Stopwatch();
-		int cnt = TwoSumFast.count(a);
+		int cnt = ThreeSumFast.count(a);
 		return timer.elapsedTime();
 	}
 	

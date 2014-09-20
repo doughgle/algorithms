@@ -1,6 +1,6 @@
 package doublingTest;
 
-public class ThreeSum {
+public class TwoSum {
 	
 	/**
 	 * Counts the number of triples in the given integer array which sum to zero.
@@ -28,16 +28,11 @@ public class ThreeSum {
 			/*/B */
 				/* C: statement executed in quadratic time */
 				j < N; j++) {
-				for (int k = j+1; 
 				/* C */
-					/* D: statements executed in cubic time */
-					k < N; k++) {
-					if(a[i] + a[j] + a[k] == 0)
+					if(a[i] + a[j] == 0)
 						cnt++; /* E: depends on input */
-					/* D */
 				}
 			}
-		}
 		return cnt;
 	}
 	

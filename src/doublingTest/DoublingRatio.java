@@ -2,6 +2,15 @@ package doublingTest;
 
 import java.util.Random;
 
+/**
+ * A tool for determining the order of growth of an algorithm.
+ * 
+ * The technique:
+ *  + uses an input generator to model the expected input data.
+ *  + successively calls the algorithm under test with the input data.
+ *  + calculates the ratio of running time to previous running time.
+ *  + doubles the input size N.
+ */
 public class DoublingRatio {
 	
 	public static double timeTrial(int N) {

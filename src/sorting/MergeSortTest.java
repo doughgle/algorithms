@@ -20,6 +20,15 @@ public class MergeSortTest {
 	public void setUp() {
 		sorter = new MergeSorter();
 	}
+
+	@Test
+	public void testGivenNullSequenceShouldThrowIllegalArgumentException() {
+		try {
+			sorter.sort(null);
+			fail("Given Null seq should throw illegal argument exception");
+		} catch (IllegalArgumentException e){
+		}
+	}
 	
 	@Test
 	public void testGivenEmptySequenceReturnsEmptySequence() {
@@ -51,7 +60,7 @@ public class MergeSortTest {
 	public void testPerformanceWithLargeInputSize() {
 		List<Integer> seq = new ArrayList<Integer>();
 		Random random = new Random();
-		for (int i = 0; i < 1000000; i++) {
+		for (int i = 0; i < 100000; i++) {
 			seq.add(random.nextInt(10));
 		}
 		

@@ -12,7 +12,10 @@ public class MergeSorter {
 	 * @param list
 	 * @return sortedSequence
 	 */
-	public List<Integer> sort(List<Integer> list) {
+	public List<Integer> sort(List<Integer> list) throws IllegalArgumentException {
+		if(list == null)
+			throw new IllegalArgumentException("Expected a sequence, got null.");
+		
 		// base case
 		if(list.size() <= 1)
 			return list;

@@ -51,7 +51,7 @@ public class MergeSorter {
 			
 			Integer leftSmallestElem = leftSortedSeq.get(lIdx);
 			Integer rightSmallestElem = rightSortedSeq.get(rIdx);
-			if(leftSmallestElem < rightSmallestElem) {
+			if(leftSmallestElem.compareTo(rightSmallestElem) < 0) {
 				sortedSeq.add(leftSmallestElem);
 				lIdx++;
 			}

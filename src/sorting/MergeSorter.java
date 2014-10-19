@@ -30,6 +30,14 @@ public class MergeSorter {
 
 	/**
 	 * Merge step
+	 * 
+	 * Invariant: When comparing duplicate elements, the relative order is preserved 
+	 * (i.e. left element before right element). This is an invariant that's expected 
+	 * of Merge Sort and one reason it's preferred over Quicksort, which cannot be made
+	 * 'stable' in preserving the original ordering. The reason to preserve relative order 
+	 * of otherwise equal elements is that they could have been pre-sorted by another criteria 
+	 * (e.g. sorted by first name, then last name).
+	 * 
 	 * Running time O(n)
 	 * @param leftSortedSeq
 	 * @param rightSortedSeq

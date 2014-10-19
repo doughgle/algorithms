@@ -41,7 +41,7 @@ public class MergeSorter {
 	 * Running time O(n)
 	 * @param leftSortedSeq
 	 * @param rightSortedSeq
-	 * @return mergedSortedSequences
+	 * @return A new list of the merged sorted sequences.
 	 */
 	private static List<Integer> merge(List<Integer> leftSortedSeq, List<Integer> rightSortedSeq) {
 

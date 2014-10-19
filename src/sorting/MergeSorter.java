@@ -12,7 +12,7 @@ public class MergeSorter {
 	 * @param list
 	 * @return sortedSequence
 	 */
-	public List<Integer> sort(List<Integer> list) throws IllegalArgumentException {
+	public static List<Integer> sort(List<Integer> list) throws IllegalArgumentException {
 		if(list == null)
 			throw new IllegalArgumentException("Expected a sequence, got null.");
 		if(list.contains(null))
@@ -35,7 +35,7 @@ public class MergeSorter {
 	 * @param rightSortedSeq
 	 * @return mergedSortedSequences
 	 */
-	private List<Integer> merge(List<Integer> leftSortedSeq, List<Integer> rightSortedSeq) {
+	private static List<Integer> merge(List<Integer> leftSortedSeq, List<Integer> rightSortedSeq) {
 
 		if(leftSortedSeq.isEmpty())
 			return rightSortedSeq;

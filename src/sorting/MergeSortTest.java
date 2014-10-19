@@ -14,17 +14,10 @@ import org.junit.Test;
 
 public class MergeSortTest {
 
-	private MergeSorter sorter;
-
-	@Before
-	public void setUp() {
-		sorter = new MergeSorter();
-	}
-
 	@Test
 	public void testGivenNullSequenceShouldThrowIllegalArgumentException() {
 		try {
-			sorter.sort(null);
+			MergeSorter.sort(null);
 			fail("Given Null seq should throw illegal argument exception");
 		} catch (IllegalArgumentException e){
 		}
@@ -32,21 +25,21 @@ public class MergeSortTest {
 	
 	@Test
 	public void testGivenEmptySequenceReturnsEmptySequence() {
-		assertEquals(new ArrayList<Integer>(), sorter.sort(new ArrayList<Integer>()));
+		assertEquals(new ArrayList<Integer>(), MergeSorter.sort(new ArrayList<Integer>()));
 	}
 
 	@Test
 	public void testGivenSequenceOfOneReturnsThatSequence() {
 		ArrayList<Integer> seq = new ArrayList<Integer>();
 		seq.add(1);
-		assertSame(seq, sorter.sort(seq));
+		assertSame(seq, MergeSorter.sort(seq));
 	}
 	
 	@Test
 	public void testGivenSequenceContainingNullElementShouldThrowIllegalArgumentException() {
 		List<Integer> seq = Arrays.asList(1, null);
 		try {
-			sorter.sort(seq);
+			MergeSorter.sort(seq);
 			fail("Given seq containing null element should throw illegal argument exception");
 		} catch (IllegalArgumentException e){
 			
@@ -58,14 +51,14 @@ public class MergeSortTest {
 	public void testGivenUnsortedSequenceOfTenUniqueElementsReturnsSortedSeq() {
 		List<Integer> seq = Arrays.asList(2, 1, 4, 3, 5, 9, 10, 8, 6, 7);
 		List<Integer> expectedSeq = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-		assertEquals(expectedSeq, sorter.sort(seq));
+		assertEquals(expectedSeq, MergeSorter.sort(seq));
 	}
 
 	@Test
 	public void testGivenUnsortedSequenceWithDuplicateElementsReturnsSortedSeq() {
 		List<Integer> seq = Arrays.asList(2, 1, 2, 3, 5);
 		List<Integer> expectedSeq = Arrays.asList(1, 2, 2, 3, 5);
-		assertEquals(expectedSeq, sorter.sort(seq));
+		assertEquals(expectedSeq, MergeSorter.sort(seq));
 	}
 	
 	@Test
@@ -78,7 +71,7 @@ public class MergeSortTest {
 		
 		List<Integer> expectedSeq = new ArrayList<Integer>(seq); 
 		Collections.sort(expectedSeq);
-		assertEquals(expectedSeq, sorter.sort(seq));
+		assertEquals(expectedSeq, MergeSorter.sort(seq));
 	}
 
 }

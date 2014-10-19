@@ -43,6 +43,18 @@ public class MergeSortTest {
 	}
 	
 	@Test
+	public void testGivenSequenceContainingNullElementShouldThrowIllegalArgumentException() {
+		List<Integer> seq = Arrays.asList(1, null);
+		try {
+			sorter.sort(seq);
+			fail("Given seq containing null element should throw illegal argument exception");
+		} catch (IllegalArgumentException e){
+			
+		}
+		
+	}
+	
+	@Test
 	public void testGivenUnsortedSequenceOfTenUniqueElementsReturnsSortedSeq() {
 		List<Integer> seq = Arrays.asList(2, 1, 4, 3, 5, 9, 10, 8, 6, 7);
 		List<Integer> expectedSeq = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);

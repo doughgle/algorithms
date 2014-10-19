@@ -15,6 +15,8 @@ public class MergeSorter {
 	public List<Integer> sort(List<Integer> list) throws IllegalArgumentException {
 		if(list == null)
 			throw new IllegalArgumentException("Expected a sequence, got null.");
+		if(list.contains(null))
+			throw new IllegalArgumentException("Given sequence contains null element(s).");
 		
 		// base case
 		if(list.size() <= 1)
